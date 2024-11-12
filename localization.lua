@@ -23,8 +23,8 @@
 -------------------------------------------------------------------------------
 -- the constants for the mod (non localized)
 -------------------------------------------------------------------------------
-DCR_VERSION_STRING = "Decursive 1.9.8.5";
-BINDING_HEADER_DECURSIVE = "Decursive";
+DCR_VERSION_STRING = "一键驱散 1.9.8.5";
+BINDING_HEADER_DECURSIVE = "一键驱散";
 
 DCR_MACRO_COMMAND  = "/decursive";
 DCR_MACRO_SHOW     = "/dcrshow";
