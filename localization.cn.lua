@@ -64,6 +64,7 @@ if ( GetLocale() == "zhCN" ) then
 DCR_VERSION_STRING = "一键驱散 1.9.8.5";
 BINDING_HEADER_DECURSIVE = "一键驱散";
 
+--start added in Rc4
 DCR_ALLIANCE_NAME = '联盟';
 
 DCR_LOC_CLASS_DRUID   = '德鲁伊';
@@ -103,6 +104,7 @@ DCR_CLEAR_PRIO	    = '清';
 DCR_CLEAR_SKIP	    = '清';
 
 
+--end added in Rc4
 DCR_LOC_AF_TYPE = {};
 DCR_LOC_AF_TYPE [DCR_DISEASE] = '疾病';
 DCR_LOC_AF_TYPE [DCR_MAGIC]   = '魔法';
@@ -151,7 +153,7 @@ DCR_PRIORITY_LIST  = "设置优先列表";
 DCR_SKIP_LIST_STR  = "设置忽略列表";
 DCR_SKIP_OPT_STR   = "选项设置";
 DCR_POPULATE_LIST  = "列表快速添加器";
-DCR_MOVE_ID        = "左键上移\n右键下移\nShift+点击删除";
+DCR_RREMOVE_ID     = "移除此玩家";
 DCR_HIDE_MAIN      = "隐藏工具条";
 DCR_SHOW_MSG	   = "如果你想要显示Decursive的工具条，输入/dcrshow。";
 DCR_IS_HERE_MSG	   = "Decursive初始化完毕。";
@@ -165,6 +167,9 @@ DCR_REVERSE_LIVELIST= "反向显示实时列表";
 DCR_TIE_LIVELIST    = "根据工具条是否可见显示/隐藏实时列表";
 DCR_HIDE_LIVELIST   = "隐藏实时列表";
 
+DCR_MUTAT_INJ       = "治愈变异注射";
+DCR_WYV_STING		= "消除翼龙钉刺";
+
 DCR_AMOUNT_AFFLIC   = "实时列表显示人数：";
 DCR_BLACK_LENGTH    = "黑名单持续时间(秒)：";
 DCR_SCAN_LENGTH     = "实时检测时间间隔(秒)：";
@@ -176,10 +181,9 @@ DCR_IGNORE_STEALTH  = "忽略潜行的玩家";
 DCR_PLAY_SOUND	    = "有玩家需要净化时播放声音提示";
 DCR_ANCHOR          = "Decursive文字定位";
 DCR_CHECK_RANGE     = "在净化前检查是否超出施法距离";
-DCR_FAST_RANGE_CHECK= "启用快速(不精确)距离检测";
 DCR_DONOT_BL_PRIO   = "不将优先列表中的玩家加入黑名单";
 DCR_CHOOSE_CURE	    = "净化类型选择";
-DCR_ABORT_SIP	    = "在净化前中止正在施放的法术";
+
 
 -- $s is spell name
 -- $a is affliction name/type
@@ -194,55 +198,51 @@ DCR_OUT_OF_RANGE     = "$t距离太远。$a效果无法被驱除。";
 DCR_IGNORE_STRING    = "忽略$t受到的$a效果。";
 
 DCR_INVISIBLE_LIST = {
-	["潜伏"]	= true,
-	["潜行"]	= true,
-	["影遁"]	= true,
+    ["Prowl"]       = "潜伏",
+    ["Stealth"]     = "潜行",
+    ["Shadowmeld"]  = "影遁",
 }
 
 -- this causes the target to be ignored!!!!
 DCR_IGNORELIST = {
-	["放逐术"]	= true,
-	["相位变换"]	= true,
+    ["Banish"]      = "放逐术",
+    ["Phase Shift"] = "相位变换",
 };
 
 -- ignore this effect
 DCR_SKIP_LIST = {
-	["无梦睡眠"]	= true,
-	["强效无梦睡眠"]= true,
-	["昏睡"]	= true,
-	["强效昏睡"]	= true,
-	["心灵视界"]	= true,
-	["变异注射"]	= true,
-	["腐蚀耐力"]	= true,
-	["淹没"]	= true,
+    ["Dreamless Sleep"] = "无梦睡眠",
+    ["Greater Dreamless Sleep"] = "强效昏睡",
+    ["Mind Vision"] = "心灵视界",
+    ["Mutating Injection"]  = "变异注射",
+	["Magma Shackles"]      = "熔岩镣铐",
+	["Delusions of Jin'do"] = "金度的欺骗",
+	["Songflower Serenade"] = "风歌夜曲",
+	["Curse of Recklessness"] = "鲁莽诅咒",
+	["Mol'dar's Moxie"] = "摩尔达的勇气",
+	["Fengus' Ferocity"] = "芬古斯的狂暴",
+	["Slip'kik's Savvy"] = "斯里基克的机智",
+	["Songflower Serenade"] = "风歌夜曲",
+	["Wyvern Sting"] = "翼龙钉刺",
+	--["Sanctum Mind Decay"] = "圣心腐朽",
+	["Dreamstate"] = "梦境",
+	["Call of Nightmare"] = "噩梦的召唤",
 };
 
 -- ignore the effect bassed on the class
 DCR_SKIP_BY_CLASS_LIST = {
-	[DCR_CLASS_WARRIOR] = {
-		["上古狂乱"]	= true,
-		["点燃法力"]	= true,
-		["污浊之魂"]	= true,
-		["法力燃烧"]	= true,
-	};
-	[DCR_CLASS_ROGUE] = {
-		["沉默"]	= true,
-		["上古狂乱"]	= true,
-		["点燃法力"]	= true,
-		["污浊之魂"]	= true,
-		["法力燃烧"]	= true,
-		["音素爆破"]	= true,
-	};
-	[DCR_CLASS_HUNTER] = {
-		["熔岩镣铐"]	= true,
-	};
-	[DCR_CLASS_MAGE] = {
-		["熔岩镣铐"]	= true,
-	};
+    [DCR_CLASS_WARRIOR] = {
+	["Ancient Hysteria"]   = "上古狂乱",
+	["Ignite Mana"]        = "点燃法力",
+	["Tainted Mind"]       = "污浊之魂",
+    };
+    [DCR_CLASS_ROGUE] = {
+	["Silence"]            = "沉默",
+	["Ancient Hysteria"]   = "上古狂乱",
+	["Ignite Mana"]        = "点燃法力",
+	["Tainted Mind"]       = "污浊之魂",
+	["Smoke Bomb"]         = "烟雾弹",
+	["Screams of the Past"] = "往日的尖啸",
+    };
 };
-
-DCR_USER_CHECK_DETECT1  = "DECURSIVE";
-DCR_USER_CHECK_DETECT2  = "检查";
-DCR_USER_CHECK_RESPONSE = "姓名：%s  /  职业：%s  /  版本：%s";
-
 end
