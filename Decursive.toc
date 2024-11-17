@@ -7,7 +7,7 @@
 ## SavedVariablesPerCharacter: Dcr_Saved, DCR_REMOTE_DEBUG
 ## Version 1.9.8.5
 ## Author: Quu, Archarodim, Lexie, Wind, Sunelegy
-## URL: https://github.com/Lexiebean/Decursive
+## URL: https://github.com/NineTears/Decursive
 localization.lua
 localization.cn.lua
 localization.fr.lua
