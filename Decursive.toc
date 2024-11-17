@@ -6,7 +6,7 @@
 ## Notes-zhCN:|CFF33AAFFDecursive|R|N一键驱散不良效果。
 ## SavedVariablesPerCharacter: Dcr_Saved, DCR_REMOTE_DEBUG
 ## Version 1.9.8.5
-## Author: Lexie (Archarodim (Originally coded by Quu)), Wind, Sunelegy
+## Author: Quu, Archarodim, Lexie, Wind, Sunelegy
 ## URL: https://github.com/Lexiebean/Decursive
 localization.lua
 localization.cn.lua
