@@ -40,7 +40,7 @@ DCR_MACRO_SKLIST   = "/dcrsklist";
 DCR_MACRO_SKSHOW   = "/dcrskshow";
 DCR_MACRO_DEBUG	   = "/dcrdebug";
 
--- 下列信息别翻译, 请始终保持英文
+-- DO NOT TRANSLATE, THOSE ARE ALWAYS ENGLISH
 DCR_CLASS_DRUID   = 'DRUID';
 DCR_CLASS_HUNTER  = 'HUNTER';
 DCR_CLASS_MAGE    = 'MAGE';
@@ -155,7 +155,7 @@ DCR_SKIP_OPT_STR   = "选项设置";
 DCR_POPULATE_LIST  = "列表快速添加器";
 DCR_RREMOVE_ID     = "移除此玩家";
 DCR_HIDE_MAIN      = "隐藏工具条";
-DCR_SHOW_MSG	   = "如果你想要显示Decursive的工具条，输入/dcrshow。";
+DCR_SHOW_MSG	   = "如果你想要显示Decursive的工具条，输入/dcrshow";
 DCR_IS_HERE_MSG	   = "Decursive初始化完毕。";
 
 DCR_PRINT_CHATFRAME = "在聊天窗口显示信息";
@@ -227,6 +227,7 @@ DCR_SKIP_LIST = {
 	--["Sanctum Mind Decay"] = "圣心腐朽",
 	["Dreamstate"] = "梦境",
 	["Call of Nightmare"] = "噩梦的召唤",
+	["Icicles"] = "冰柱",
 };
 
 -- ignore the effect bassed on the class
